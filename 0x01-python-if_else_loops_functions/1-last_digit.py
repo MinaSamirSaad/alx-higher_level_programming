@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-lastDigit = number%10 if number >=0 else number % -10
+lastDigit = number%10 if number >= 0 else number % -10
 message = ""
 if lastDigit == 0:
    message ="and is 0"
