@@ -1,5 +1,4 @@
 #include <Python.h>
-#include <stdio.h>
 /**
  * print_python_list - Prints information about a Python list object
  * @p: Pointer to the PyObject representing the list
