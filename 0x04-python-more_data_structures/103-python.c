@@ -1,4 +1,5 @@
 #include <Python.h>
+#include <stdio.h>
 /**
  * print_python_list - Prints information about a Python list object
  * @p: Pointer to the PyObject representing the list
@@ -27,7 +28,7 @@ printf("Element %ld: %s\n", i, Py_TYPE(obj)->tp_name);
 void print_python_bytes(PyObject *p)
 {
 Py_ssize_t size, i;
-char *str;
+unsigned char *str;
 
 printf("[.] bytes object info\n");
 
@@ -37,15 +38,15 @@ printf("  [ERROR] Invalid Bytes Object\n");
 return;
 }
 
-size = ((PyVarObject *)p)->ob_size;
-str = ((PyBytesObject *)p)->ob_sval;
+size = PyBytes_Size(p);
+str = (unsigned char *)PyBytes_AsString(p);
 
 printf("  size: %ld\n", size);
-printf("  trying string: %s\n", str);
+printf("  trying string: %s\n", PyBytes_AsString(p));
 
-printf("  first %ld bytes:", size + 1 < 10 ? size + 1 : 10);
-for (i = 0; i < size + 1 && i < 10; i++)
-printf(" %.2x", (unsigned char)str[i]);
+printf("  first %ld bytes:", size < 10 ? size : 10);
+for (i = 0; i < size && i < 10; i++)
+printf(" %.2x", str[i]);
 
 printf("\n");
 }
