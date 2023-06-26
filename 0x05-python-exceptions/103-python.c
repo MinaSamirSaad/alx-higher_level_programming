@@ -1,5 +1,13 @@
+/*
+ * File: 103-python.c
+ * Auth: Brennan D Baraban
+ */
 #include <Python.h>
 #include <stdio.h>
+
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+void print_python_float(PyObject *p);
 /**
  * print_python_list - print basic info about Python lists
  * @p: Python list
@@ -23,30 +31,27 @@ printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
  * print_python_bytes - print basic info about Python bytes
  * @p: Python bytes
  */
-void print_python_bytes(PyObject *p)
-{
-Py_ssize_t size, i;
-char *str;
+void print_python_bytes(PyObject *p) {
+    Py_ssize_t size, i;
+    char *str;
 
-printf("[.] bytes object info\n");
-if (!PyBytes_Check(p))
-{
-printf("  [ERROR] Invalid Bytes Object\n");
-return;
-}
+    printf("[.] bytes object info\n");
+    if (!PyBytes_Check(p)) {
+        printf("  [ERROR] Invalid Bytes Object\n");
+        return;
+    }
 
-size = PyBytes_Size(p);
-str = PyBytes_AsString(p);
+    size = PyBytes_Size(p);
+    str = PyBytes_AsString(p);
 
-printf("  size: %zd\n", size);
-printf("  trying string: %s\n", str);
+    printf("  size: %zd\n", size);
+    printf("  trying string: %s\n", str);
 
-printf("  first %zd bytes:", (size < 10 ? size + 1 : 10));
-for (i = 0; i < size && i < 10; i++)
-{
-printf(" %02x", (unsigned char)str[i]);
-}
-printf("\n");
+    printf("  first %zd bytes:", (size < 10 ? size : 10));
+    for (i = 0; i < size && i < 10; i++) {
+        printf(" %02x", (unsigned char)str[i]);
+    }
+    printf("\n");
 }
 /**
  * print_python_float - print basic info about Python float
