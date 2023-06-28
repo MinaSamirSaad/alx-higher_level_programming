@@ -8,8 +8,10 @@ class Node:
         ''' constructor doc '''
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        if next_node is not None and not isinstance(next_node, Node):
+            raise TypeError('next_node must be a Node object')
+        self.next_node = next_node
 
     @property
     def data(self):
