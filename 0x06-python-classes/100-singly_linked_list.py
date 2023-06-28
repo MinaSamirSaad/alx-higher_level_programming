@@ -31,7 +31,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         ''' next node setter '''
-        if not isinstance(value, Node):
+        if value is not None and not isinstance(value, Node):
             raise TypeError('next_node must be a Node object')
         self.__next_node = value
 
@@ -60,9 +60,9 @@ class SinglyLinkedList:
                 break
             temp = temp.next_node
         n = Node(value)
-        if temp.next_node is not None:
-            n.next_node = temp.next_node
-        temp.next_node = n        
+        n.next_node = temp.next_node
+        temp.next_node = n
+        return
 
     def __str__(self):
         ''' print all data in linked list '''
