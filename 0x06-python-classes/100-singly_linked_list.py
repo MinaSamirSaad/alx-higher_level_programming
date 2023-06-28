@@ -36,13 +36,13 @@ class Node:
         self.__next_node = value
 
 class SinglyLinkedList:
-    ''' Node class doc '''
+    ''' single linked list class'''
     def __init__(self):
-        ''' constructor doc '''
+        ''' constructor '''
         self.__head = None
 
     def sorted_insert(self, value):
-        ''' insert sorted nodes in linked list '''
+        ''' replace __str__'''
         temp = self.__head
         if temp is None:
             n = Node(value)
@@ -68,6 +68,6 @@ class SinglyLinkedList:
         ''' print all data in linked list '''
         temp = self.__head
         while temp.next_node is not None:
-            print(temp.data)
+            print(str(temp.data))
             temp = temp.next_node
-        return f'{temp.data}'
+        return f'{str(temp.data)}'
