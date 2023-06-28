@@ -65,9 +65,12 @@ class SinglyLinkedList:
         return
 
     def __str__(self):
-        ''' print all data in linked list '''
-        temp = self.__head
-        while temp.next_node is not None:
-            print(str(temp.data))
-            temp = temp.next_node
-        return f'{str(temp.data)}'
+        ''' replace __str__'''
+        tmp = self.__head
+        ret = ''
+        while (tmp is not None):
+            ret += str(tmp.data)
+            tmp = tmp.next_node
+            if tmp is not None:
+                ret += '\n'
+        return ret
