@@ -19,7 +19,7 @@ class Rectangle:
     def __str__(self):
         """ Define rectangle string """
         string = ""
-        if self.__height == 0 or self.width == 0:
+        if self.height == 0 or self.width == 0:
             return ""
         for i in range(self.height):
             string += '#' * self.width
