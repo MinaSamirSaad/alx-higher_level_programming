@@ -2,7 +2,5 @@
 class LockedClass:
     __slots__ = ['first_name']
 
-    def __setattr__(self, attr, value):
-        if not hasattr(self, attr) and attr != 'first_name':
-            raise AttributeError("object has no attribute '{}'".format(attr))
-        super().__setattr__(attr, value)
+    def __init__(self):
+        self.first_name = None
