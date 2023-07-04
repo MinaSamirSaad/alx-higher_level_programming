@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-class LockedClass:
-    __slots__ = ['first_name']
+''' locked class '''
 
-    def __init__(self):
-        self.first_name = None
+
+class LockedClass:
+    ''' class LockedClass '''
+    __slots__ = 'first_name'
