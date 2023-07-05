@@ -44,6 +44,7 @@ This project is about objects in Python, mutable and immutable objects.
 #### Advanced Tasks
 
 | File | Description |
+| ------ | ------ |
 | [100-magic_string.py](100-magic_string.py) | function magic_string() that returns a string “BestSchool” n times the number of the iteration |
 | [101-locked_class.py](101-locked_class.py) | class LockedClass with no class or object attribute, that prevents the user from dynamically creating new instance attributes, except if the new instance attribute is called first_name |
 | [103-line1.txt](103-line1.txt) | int 1/3 |
