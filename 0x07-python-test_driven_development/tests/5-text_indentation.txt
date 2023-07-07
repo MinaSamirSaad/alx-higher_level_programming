@@ -1,0 +1,63 @@
+==============================
+test file of 5-text_indentation.py
+==============================
+
+Using ''text_indentation'' with strings
+______________________________
+
+First import ''text_indentation'' from the ''5-text_indentation'' module:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Tests
+______________________________
+""" Passing Tests """
+
+>>> text_indentation("Hello.World")
+Hello.
+<BLANKLINE>
+World
+
+>>> text_indentation("Holberton.School.")
+Holberton.
+<BLANKLINE>
+School.
+<BLANKLINE>
+
+>>> text_indentation("Holberton. School. How are you? My name is: John")
+Holberton.
+<BLANKLINE>
+School.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+My name is:
+<BLANKLINE>
+John
+
+""" Tests that should raise an Error """
+
+>>> text_indentation(23)
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+	  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation([1, 2])
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
+
+>>> text_indentation("hello", 3)
+Traceback (most recent call last):
+	  ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation({"hello": 'value'})
+Traceback (most recent call last):
+	  ...
+TypeError: text must be a string
