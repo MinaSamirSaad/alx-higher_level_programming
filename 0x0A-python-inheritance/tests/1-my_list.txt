@@ -1,0 +1,44 @@
+>>> MyList = __import__('1-my_list').MyList
+
+------------------------------------------------------------
+tests
+------------------------------------------------------------
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+>>> my_list = MyList()
+>>> my_list.append(100000000000)
+>>> my_list.append(400)
+>>> my_list.append(20)
+>>> my_list.append(50000)
+>>> my_list.append(3000)
+>>> print(my_list)
+[100000000000, 400, 20, 50000, 3000]
+>>> my_list.print_sorted()
+[20, 400, 3000, 50000, 100000000000]
+
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-4)
+>>> my_list.append(-10)
+>>> my_list.append(-2)
+>>> print(my_list)
+[-1, -4, -10, -2]
+>>> my_list.print_sorted()
+[-10, -4, -2, -1]
