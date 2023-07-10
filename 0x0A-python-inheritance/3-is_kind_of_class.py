@@ -1,16 +1,16 @@
 #!/usr/bin/python3
 """
-Function that verify if an object is a exactly an instance of the specified
-class, if it's true return True, otherwise False
+function that returns True if the object is exactly an
+instance of the specified class otherwise False
 """
 
 
 def is_kind_of_class(obj, a_class):
     """
     Arguments:
-    @obj: object to verify
-    @a_class: class of the object to verify
+    @obj: the object
+    @a_class: the class
     Return:
-    True if the object is exactly an instance of the class, otherwise False
+    True if the object is exactly an instance of the specified class otherwise False
     """
     return (isinstance(obj, a_class))
