@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Function that returns True if the object is exactly an
-Instance of the specified class otherwise False
+instance of the specified class otherwise False
 """
 
 
