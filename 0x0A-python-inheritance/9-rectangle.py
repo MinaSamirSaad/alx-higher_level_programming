@@ -18,6 +18,7 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
+    """ Implementation of area """
     def area(self):
         """ Function that calculates the area of the rectangle
         Return:
@@ -25,6 +26,7 @@ class Rectangle(BaseGeometry):
         """
         return (self.__width * self.__height)
 
+    """ Implementation of str """
     def __str__(self):
         """ Returns the message to print """
         return ("[Rectangle] {:}/{:}".format(self.__width, self.__height))
