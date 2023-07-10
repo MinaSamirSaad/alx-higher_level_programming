@@ -20,8 +20,8 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """det the rectangle area"""
-        return self.__height * self.__width
+        return (self.__height * self.__width)
 
     def __str__(self):
         """ Returns the message to print """
-        return "[Rectangle] {:}/{:}".format(self.__width, self.__height)
+        return ("[Rectangle] {:}/{:}".format(self.__width, self.__height))
