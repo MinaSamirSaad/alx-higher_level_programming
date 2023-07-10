@@ -1,10 +1,22 @@
 #!/usr/bin/python3
-is_same_class = __import__('2-is_same_class').is_same_class
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-a = 1
-if is_same_class(a, int):
-    print("{} is an instance of the class {}".format(a, int.__name__))
-if is_same_class(a, float):
-    print("{} is an instance of the class {}".format(a, float.__name__))
-if is_same_class(a, object):
-    print("{} is an instance of the class {}".format(a, object.__name__))
+bg = BaseGeometry()
+
+bg.integer_validator("my_int", 12)
+bg.integer_validator("width", 89)
+
+try:
+    bg.integer_validator("name", "John")
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("age", 0)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("distance", -4)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
