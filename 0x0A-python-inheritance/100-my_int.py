@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""MyInt module"""
+"""
+Class MyInt
+this class inherits from int and switch != and ==
+"""
 
 
 class MyInt(int):
+    """ class that switch != and == """
     def __eq__(self, other):
         return super().__ne__(other)  # Invert the result of the default `==` operator
 
