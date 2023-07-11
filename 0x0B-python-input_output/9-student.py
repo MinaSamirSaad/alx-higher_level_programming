@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-'''class Student that defines a student by'''
+'''class Student that defines a student'''
 
 
 class Student:
-    '''class Student that defines a student by'''
+    '''class Student that defines a student'''
     def __init__(self, first_name, last_name, age):
         '''Public instance attributes'''
         self.first_name = first_name

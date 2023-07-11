@@ -1,29 +1,13 @@
 #!/usr/bin/python3
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+Student = __import__('10-student').Student
 
-filename = "my_list.json"
-my_list = load_from_json_file(filename)
-print(my_list)
-print(type(my_list))
+student_1 = Student("John", "Doe", 23)
+student_2 = Student("Bob", "Dylan", 27)
 
-filename = "my_dict.json"
-my_dict = load_from_json_file(filename)
-print(my_dict)
-print(type(my_dict))
+j_student_1 = student_1.to_json()
+j_student_2 = student_2.to_json(['first_name', 'age'])
+j_student_3 = student_2.to_json(['middle_name', 'age'])
 
-try:
-    filename = "my_set_doesnt_exist.json"
-    my_set = load_from_json_file(filename)
-    print(my_set)
-    print(type(my_set))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-
-try:
-    filename = "my_fake.json"
-    my_fake = load_from_json_file(filename)
-    print(my_fake)
-    print(type(my_fake))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
-    
+print(j_student_1)
+print(j_student_2)
+print(j_student_3)
