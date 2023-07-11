@@ -1,11 +1,16 @@
 #!/usr/bin/python3
-'''class Student that defines a student'''
+"""
+Class Student
+Public instance attributes:
+- first_name
+- last_name
+- age
+"""
 
 
-class Student:
-    '''class Student that defines a student'''
+class Student():
     def __init__(self, first_name, last_name, age):
-        '''Public instance attributes'''
+        """ Constructor """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -21,4 +26,3 @@ class Student:
             return {key: self.__dict__[key]
                     for key in attrs if key in self.__dict__}
         return self.__dict__
-
