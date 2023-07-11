@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-function that creates an Object from a “JSON file”
+Function that creates an Object from a “JSON file”
 """
 
 
@@ -14,4 +14,4 @@ def load_from_json_file(filename):
     @filename: the file that i will read the json data from it
     '''
     with open(filename, encoding='utf-8') as f:
-        return  json.load(f)
+        return json.load(f)
