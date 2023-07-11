@@ -14,7 +14,7 @@ filename = 'add_item.json'
 
 try:
     f = load_file(filename)
-except:
+except FileNotFoundError:
     f = []
 
 for args in sys.argv[1:]:
