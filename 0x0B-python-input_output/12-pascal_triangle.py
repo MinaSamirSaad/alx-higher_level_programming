@@ -20,8 +20,8 @@ def pascal_triangle(n):
             continue
         li.append(1)
         for j in range(i - 1):
-            sum = myList[i - 1][j] + myList[i - 1][j + 1]
-            li.append(sum)
+            res = myList[i - 1][j] + myList[i - 1][j + 1]
+            li.append(res)
         li.append(1)
         myList.append(li)
     return myList
