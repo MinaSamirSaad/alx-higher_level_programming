@@ -2,7 +2,7 @@
 """
 Class Rectangle
 """
-from .base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
