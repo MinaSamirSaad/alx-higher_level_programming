@@ -25,36 +25,30 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ Getter width """
-        return (self.__width)
+        """ Getter for width """
+        return self.__width
 
     @width.setter
     def width(self, value):
-        """ Setter of width
-        Arguments:
-        @value: value to set the width of the rectangle
-        """
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
+        """ Setter for width """
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        elif value <= 0:
+            raise ValueError('width must be > 0')
         self.__width = value
 
     @property
     def height(self):
-        """ Getter height """
-        return (self.__height)
+        """ Getter for height """
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """ Setter of height
-        Arguments:
-        @value: value to set the height of the rectangle
-        """
-        if type(value) != int:
-            raise TypeError("height must be an integer")
-        elif value < 0:
-            raise ValueError("height must be >= 0")
+        """ Setter for height """
+        if type(value) is not int:
+            raise TypeError('height must be an integer')
+        elif value <= 0:
+            raise ValueError('height must be > 0')
         self.__height = value
 
     def validator(self, name, value):
@@ -67,7 +61,7 @@ class Rectangle(Base):
         A raise Type or Value error if is not an integer or
         if is not a positive number, respectly
         """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value < 0 and (name == "x" or name == "y"):
             raise ValueError("{} must be >= 0".format(name))
@@ -95,7 +89,8 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """ Calculates the area of the rectangle
+        """
+        Calculates the area of the rectangle
         Returns:
         The area of the rectangle
         """
@@ -113,9 +108,18 @@ class Rectangle(Base):
                 print('#' * self.width)
 
     def __str__(self):
+        """
+        formats string representation of the Rectangle
+        """
         return '[Rectangle] ({}) {}/{} - {}/{}'.format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """
+        update - assign the arguments to each attribute
+        @args: list of arguments
+        @kargs: dictionary of arguments, key represents
+        an attribute to the instance
+        """
         try:
             if args:
                 self.id = args[0]
@@ -131,6 +135,9 @@ class Rectangle(Base):
             pass
 
     def to_dictionary(self):
+        """
+        to_dictionary - returns a dictionary representation of a Rectangle
+        """
         return {
             'id': self.id,
             'width': self.width,

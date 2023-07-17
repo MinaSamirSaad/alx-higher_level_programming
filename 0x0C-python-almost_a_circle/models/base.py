@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class Base"""
+"""module of Class Base"""
 
 import json
 
@@ -16,6 +16,13 @@ class Base:
             self.id = Base.__nb_objects
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        Returns the JSON string representation of a list
+        Arguments:
+        @list_dictionaries: is a list of dictionaries
+        Returns:
+        The JSON string representation of list_dictionaries, otherwise "[]"
+        """
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
@@ -23,12 +30,27 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        Converts a dictionary to a JSON string representation
+        Arguments:
+        @json_string: is a string representing a list of dictionaries
+        Returns:
+        list of JSON string representation, otherwise a empty list
+        """
         if not json_string:
             return []
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        Writes the JSON string representation of list_objs to a file
+        Arguments:
+        @cls: class
+        @list_objs: is a list of instances who inherits of Base
+        Returns:
+        Only writes the JSON string in the file
+        """
         data = []
         for obj in list_objs:
             if isinstance(obj, Base):
@@ -56,6 +78,14 @@ class Base:
     
     @classmethod
     def load_from_file(cls):
+        """
+        Return a list of instances
+        Arguments:
+        @cls: current class
+        Returns:
+        An empty list if the file does not exist, otherwise,
+        return a list of instances, the type of these instances depends on cls
+        """
         data = None
         instances = []
         with open(f"{cls.__name__}.json", 'r') as f:
