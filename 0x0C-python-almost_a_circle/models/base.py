@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' base class module '''
 import json
+import csv
 
 
 class Base:
@@ -45,7 +46,7 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    def create(cls, **dictionary):
+    def create(cls, *args, **dictionary):
         ''' create object and update it with dictionary '''
         if cls.__name__ == 'Rectangle':
             obj = cls(1, 1)
@@ -54,7 +55,7 @@ class Base:
         else:
             return None
 
-        obj.update(**dictionary)
+        obj.update(*args, **dictionary)
         return obj
 
     @classmethod
@@ -69,3 +70,31 @@ class Base:
             return []
 
         return [cls.create(**s) for s in json_list]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        ''' save to csv file '''
+        x = None
+        if list_objs is None:
+            x = []
+        else:
+            x = [obj.to_dictionary() for obj in list_objs]
+
+        x = [list(obj.values()) for obj in x]
+        with open(cls.__name__+'.csv', 'w', encoding="utf-8") as f:
+            csvwriter = csv.writer(f, lineterminator='\n')
+            csvwriter.writerows(x)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        ''' load csv from file and convert to
+        list of instances and return them'''
+        csv_list = []
+        try:
+            with open(cls.__name__+'.csv', 'r', encoding="utf-8") as f:
+                csvreader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
+                for row in csvreader:
+                    csv_list.append([int(i) for i in row])
+        except Exception:
+            return []
+        return [cls.create(*s) for s in csv_list]
