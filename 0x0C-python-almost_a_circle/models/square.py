@@ -1,72 +1,55 @@
 #!/usr/bin/python3
-"""
-Class Square
-"""
-
-from models.rectangle import Rectangle
-
+""" Rectangle module 0-rectangle.py creates rectangle class """
+from .rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """
-    Square - class for a square, this class inherit form Rectangle
-    """
-    def __init__(self, size, x=0, y=0, id=None):
-        """
-        Constructor for square
-        Arguments:
-        @size: size of the rectangle
-        @x: position in x
-        @y: position in y
-        @id: amount of instances created
-        """
-        super().__init__(size, size, x, y, id)
+    ''' Square class sublass of Rectangle class '''
 
-    def __str__ (self):
-        """
-        formats string representation of the Square
-        """
-        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x, self.y, self.height)
+    def __init__(self, size, x=0, y=0, id=None):
+        ''' Square constructor '''
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """ Getter width """
-        return (self.width)
+        """Get the size of the Square."""
+        return self.width
 
     @size.setter
     def size(self, value):
-        """ Setter for size of square """
+        """set the size of the Square."""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """
-        update - assign the arguments to each attribute
-        @args: list of arguments
-        @kargs: dictionary of arguments, key represents
-        an attribute to the instance
-        """
+        ''' update attributes with values in args or kwargs'''
         try:
-            if args:
+            if (args and len(args)):
                 self.id = args[0]
-                self.width = args[1]
-                self.height = args[1]
+                self.size = args[1]
                 self.x = args[2]
                 self.y = args[3]
-            else:
-                for key, value in kwargs.items():
-                    if hasattr(self, key):
-                        setattr(self,key, value)
+            elif (kwargs and len(kwargs)):
+                for k, v in kwargs.items():
+                    if hasattr(self, k):
+                        setattr(self, k, v)
         except Exception:
             pass
 
+    def __str__(self):
+        ''' string represent the object '''
+        # [Square] (id) x/y - width/height
+        return "[{}] ({}) {}/{} - {}".format(
+            self.__class__.__name__,
+            self.id, self.x, self.y,
+            self.width
+        )
+
     def to_dictionary(self):
-        """
-        to_dictionary - returns a dictionary representation of a Square
-        """
+        """Returns dictionary representation of the rectangle"""
         return {
-            'id': self.id,
-            'size': self.size,
-            'x': self.x,
-            'y': self.y
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
         }
