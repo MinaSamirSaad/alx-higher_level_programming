@@ -16,7 +16,11 @@ This repository is about High level programming using Python.
 | [0x07-python-test_driven_development](https://github.com/MinaSamirSaad/alx-higher_level_programming/tree/main/0x07-python-test_driven_development) | Project about how to develop test cases and how to run it |
 | [0x08-python-more_classes](https://github.com/MinaSamirSaad/alx-higher_level_programming/tree/main/0x08-python-more_classes) | Second part of Python classes |
 | [0x09-python-everything_is_object](https://github.com/MinaSamirSaad/alx-higher_level_programming/tree/main/0x09-python-everything_is_object) | Introduction to know mutavle and immutable objects in Python |
-
+| [0x0A-python-inheritance](0x0A-python-inheritance) | Introduction to inhiretance |
+| [0x0B-python-input_output](0x0B-python-input_output) | Introduction to manage files |
+| [0x0C-python-almost_a_circle](0x0C-python-almost_a_circle) | This project will help you be ready for the AirBnB project |
+| [0x0D-SQL_introduction](0x0D-SQL_introduction) | Introduction to relational database SQL |
+| [0x0E-SQL_more_queries](0x0E-SQL_more_queries) | more queries in SQL |
 ## Author
 
 [Mina Samir](https://www.linkedin.com/in/mina-samir-0a0765207/) [:octocat:](https://github.com/MinaSamirSaad)
