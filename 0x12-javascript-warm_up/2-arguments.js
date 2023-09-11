@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const argv = require('process').argv;
+const argv = process.argv;
 const len = argv.length;
 let message;
 if (len > 2) {
