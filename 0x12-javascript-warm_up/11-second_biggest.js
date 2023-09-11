@@ -2,5 +2,5 @@
 if (process.argv.length < 4) {
   console.log(0);
 } else {
-  console.log(process.argv.slice(2).sort().reverse()[1]);
+  console.log(parseInt(process.argv.slice(2).sort().reverse()[1]));
 }
