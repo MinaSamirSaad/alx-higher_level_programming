@@ -1,5 +1,14 @@
 #!/usr/bin/node
-const esrever = require('./8-esrever').esrever;
+const converter = require('./10-converter').converter;
 
-console.log(esrever([1, 2, 3, 4, 5]));
-console.log(esrever(['School', 89, { id: 12 }, 'String']));
+let myConverter = converter(10);
+
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
+
+myConverter = converter(16);
+
+console.log(myConverter(2));
+console.log(myConverter(12));
+console.log(myConverter(89));
