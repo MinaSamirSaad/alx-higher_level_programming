@@ -1,14 +1,11 @@
 #!/usr/bin/node
 module.exports.nbOccurences = function (arr, num) {
-  const temp = {};
-  arr.forEach(
-    (n) => {
-      if (temp[n]) {
-        temp[n]++;
-      } else {
-        temp[n] = 1;
-      }
+  let counter = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (num === arr[i]) {
+      counter++;
     }
-  );
-  return temp[num];
+  }
+
+  return (counter);
 };
