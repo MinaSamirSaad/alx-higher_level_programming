@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-List all states from DB hbtn_0e_usa starting with N (upper N)
+List all states from DB hbtn_0e_usa
 Arguments:
     username - username to connect the mySQL
     mysql passwd - password to connect the mySQL
