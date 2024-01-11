@@ -10,9 +10,8 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "root",
-            "database": "hbtn_0e_0_usa",
-            "username": "root",
-            "password": "Mina@331"
+            "database": "hbtn_0e_4_usa",
+            "username": "root"
         }
     ]
 }
