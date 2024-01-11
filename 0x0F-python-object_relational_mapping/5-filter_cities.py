@@ -19,7 +19,10 @@ if __name__ == "__main__":
         where states.id=cities.state_id AND states.name=%s\
         order by cities.id", (argv[4], ))
     rows = cur.fetchall()
-    for row in rows:
-        print(row[0], end=", " if row != rows[-1] else "\n")
+    if len(rows) == 0:
+        print()
+    else:
+        for row in rows:
+            print(row[0], end=", " if row != rows[-1] else "\n")
     cur.close()
     db.close()
