@@ -11,8 +11,8 @@ display the id and name like this: [<id>] <name>
 if __name__ == '__main__':
     import requests
     from sys import argv
-    res = requests.post(argv[1], data={'q': (
-        argv[2] if len(argv) > 2 else "")}, timeout=5)
+    res = requests.post("http://0.0.0.0:5000/search_user", data={'q': (
+        argv[2] if len(argv) > 1 else "")}, timeout=5)
     try:
         res = res.json()
         if res:
