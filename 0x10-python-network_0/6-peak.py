@@ -10,9 +10,7 @@ def find_peak(list_of_integers):
     '''
     if len(list_of_integers) == 0:
         return None
-    elif len(list_of_integers) == 1:
-        return list_of_integers[0]
-    elif len(list_of_integers) == 2:
+    elif len(list_of_integers) <= 3:
         return max(list_of_integers)
 
     mid = int(len(list_of_integers) / 2)
